@@ -43,6 +43,18 @@ body {
     pointer-events: none;
 }
 
+.bg-grid::after {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(48, 209, 88, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
 .container {
     position: relative;
     z-index: 1;
@@ -58,8 +70,9 @@ header { text-align: center; margin-bottom: 48px; }
     font-family: var(--mono);
     font-size: 0.7rem;
     letter-spacing: 0.1em;
-    color: var(--text-muted);
-    border: 1px solid var(--border);
+    color: var(--green);
+    border: 1px solid rgba(48, 209, 88, 0.2);
+    background: rgba(48, 209, 88, 0.05);
     padding: 0.25rem 0.75rem;
     margin-bottom: 1.25rem;
 }
@@ -73,7 +86,7 @@ header { text-align: center; margin-bottom: 48px; }
 }
 
 .accent {
-    background: linear-gradient(90deg, #00d4ff, #bf5af2);
+    background: linear-gradient(90deg, #30d158, #00d4ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -100,17 +113,8 @@ header { text-align: center; margin-bottom: 48px; }
 }
 
 .input-wrapper:focus-within {
-    border-color: rgba(0, 212, 255, 0.4);
-    box-shadow: 0 0 24px rgba(0, 212, 255, 0.08);
-}
-
-.input-prefix {
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--text-dim);
-    padding: 0 0 0 16px;
-    white-space: nowrap;
-    user-select: none;
+    border-color: rgba(48, 209, 88, 0.4);
+    box-shadow: 0 0 24px rgba(48, 209, 88, 0.08);
 }
 
 #domain-input {
@@ -120,7 +124,7 @@ header { text-align: center; margin-bottom: 48px; }
     color: var(--text);
     font-family: var(--mono);
     font-size: 0.85rem;
-    padding: 14px 12px;
+    padding: 14px 16px;
     outline: none;
 }
 
@@ -130,7 +134,7 @@ header { text-align: center; margin-bottom: 48px; }
     display: flex;
     align-items: center;
     gap: 6px;
-    background: linear-gradient(135deg, #00d4ff, #0090c0);
+    background: linear-gradient(135deg, #30d158, #1a8f37);
     color: #000;
     border: none;
     padding: 14px 20px;
@@ -151,7 +155,7 @@ header { text-align: center; margin-bottom: 48px; }
     width: 24px;
     height: 24px;
     border: 2px solid var(--border);
-    border-top-color: var(--cyan);
+    border-top-color: var(--green);
     border-radius: 50%;
     animation: spin 0.7s linear infinite;
     margin: 0 auto 12px;
@@ -220,12 +224,13 @@ header { text-align: center; margin-bottom: 48px; }
 .dns-type-card {
     background: var(--surface);
     border: 1px solid var(--border);
+    border-left: 3px solid rgba(48, 209, 88, 0.25);
     margin-bottom: 6px;
     overflow: hidden;
     transition: border-color 0.2s;
 }
 
-.dns-type-card:hover { border-color: var(--border-hover); }
+.dns-type-card:hover { border-color: var(--border-hover); border-left-color: var(--green); }
 
 .dns-type-header {
     display: flex;
@@ -244,6 +249,7 @@ header { text-align: center; margin-bottom: 48px; }
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.06em;
+    color: var(--green);
 }
 
 .dns-type-meta {
@@ -277,7 +283,7 @@ header { text-align: center; margin-bottom: 48px; }
 .dns-record:last-child { border-bottom: none; }
 
 .mx-priority {
-    color: var(--cyan);
+    color: var(--green);
     font-weight: 600;
     margin-right: 8px;
 }
@@ -318,7 +324,7 @@ header { text-align: center; margin-bottom: 48px; }
     padding: 10px 12px;
     margin-bottom: 10px;
     word-break: break-all;
-    color: var(--cyan);
+    color: var(--green);
 }
 
 .policy-fields { font-size: 0.75rem; }
@@ -327,6 +333,7 @@ header { text-align: center; margin-bottom: 48px; }
 .sub-card {
     background: var(--surface);
     border: 1px solid var(--border);
+    border-left: 3px solid rgba(94, 158, 255, 0.25);
     padding: 8px 12px;
     margin-bottom: 4px;
     display: flex;
@@ -336,7 +343,7 @@ header { text-align: center; margin-bottom: 48px; }
     transition: border-color 0.2s;
 }
 
-.sub-card:hover { border-color: var(--border-hover); }
+.sub-card:hover { border-color: var(--border-hover); border-left-color: var(--blue); }
 
 .sub-name {
     font-family: var(--mono);
