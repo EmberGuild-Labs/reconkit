@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReconKit — Domain Intelligence</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🔎</span>
+                <h1>ReconKit</h1>
+            </div>
+            <p class="tagline">Full WHOIS + DNS intelligence for any domain. One lookup, every record.</p>
+        </header>
+
+        <div class="input-section">
+            <form id="lookup-form">
+                <div class="input-wrapper">
+                    <input
+                        type="text"
+                        id="domain-input"
+                        placeholder="Enter a domain (e.g. example.com)"
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                    <button type="submit" id="lookup-btn">Lookup</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Running WHOIS + DNS lookups...</p>
+        </div>
+
+        <div id="error-msg" class="error-msg hidden"></div>
+
+        <div id="results" class="results hidden">
+
+            <div class="section" id="whois-section">
+                <h2>WHOIS</h2>
+                <div id="whois-display"></div>
+            </div>
+
+            <div class="section" id="dns-section">
+                <h2>DNS Records</h2>
+                <div id="dns-display"></div>
+            </div>
+
+            <div class="section" id="spf-section">
+                <h2>SPF Record</h2>
+                <div id="spf-display"></div>
+            </div>
+
+            <div class="section" id="dmarc-section">
+                <h2>DMARC Record</h2>
+                <div id="dmarc-display"></div>
+            </div>
+
+            <div class="section" id="sub-section">
+                <h2>Subdomain Check</h2>
+                <div id="sub-display"></div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>Part of <a href="https://sentinelkit.proxnode.xyz">SentinelKit</a> — safe recon tools for the web.</p>
+        </footer>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
