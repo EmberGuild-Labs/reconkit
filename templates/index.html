@@ -3,44 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReconKit — Domain Intelligence</title>
+    <title>ReconKit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+
+    <div class="bg-grid"></div>
+
     <div class="container">
         <header>
-            <div class="logo">
-                <span class="logo-icon">[>]</span>
-                <h1>RECONKIT</h1>
-            </div>
-            <p class="tagline">// domain intelligence: WHOIS + DNS + subdomain enumeration</p>
-            <div class="status-line">STATUS: READY | RECORDS: A/AAAA/MX/TXT/NS/CNAME/SOA/CAA | MODE: PASSIVE</div>
+            <div class="tool-badge">sentinelkit / domain-intel</div>
+            <h1 class="title">Recon<span class="accent">Kit</span></h1>
+            <p class="subtitle">Domain intelligence. Full WHOIS, DNS records, SPF/DMARC, and subdomain enumeration in one lookup.</p>
         </header>
 
         <div class="input-section">
             <form id="lookup-form">
                 <div class="input-wrapper">
+                    <span class="input-prefix">target ~</span>
                     <input
                         type="text"
                         id="domain-input"
-                        placeholder="Enter a domain (e.g. example.com)"
+                        placeholder="example.com"
                         autocomplete="off"
                         spellcheck="false"
                     >
-                    <button type="submit" id="lookup-btn">SCAN</button>
+                    <button type="submit" id="lookup-btn">
+                        <span>Scan</span>
+                        <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
                 </div>
             </form>
         </div>
 
         <div id="loading" class="loading hidden">
             <div class="spinner"></div>
-            <p>SCANNING TARGET...</p>
+            <p>Scanning target</p>
         </div>
 
         <div id="error-msg" class="error-msg hidden"></div>
 
         <div id="results" class="results hidden">
-
             <div class="section" id="whois-section">
                 <h2>WHOIS</h2>
                 <div id="whois-display"></div>
@@ -52,24 +58,24 @@
             </div>
 
             <div class="section" id="spf-section">
-                <h2>SPF Record</h2>
+                <h2>SPF</h2>
                 <div id="spf-display"></div>
             </div>
 
             <div class="section" id="dmarc-section">
-                <h2>DMARC Record</h2>
+                <h2>DMARC</h2>
                 <div id="dmarc-display"></div>
             </div>
 
             <div class="section" id="sub-section">
-                <h2>Subdomain Check</h2>
+                <h2>Subdomains</h2>
                 <div id="sub-display"></div>
             </div>
-
         </div>
 
         <footer>
-            <p><a href="https://sentinelkit.proxnode.xyz">SENTINELKIT</a> // reconnaissance toolkit</p>
+            <span class="footer-logo">SENTINELKIT</span>
+            <span class="footer-link"><a href="https://sentinelkit.proxnode.xyz">sentinelkit.proxnode.xyz</a></span>
         </footer>
     </div>
 
